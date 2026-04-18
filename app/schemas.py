@@ -1,11 +1,13 @@
 from typing import List, Optional
+from datetime import date
 from pydantic import BaseModel, Field
 
 # ---------- Book Schemas ----------
 
 class BookBase(BaseModel):
     title: str
-    description: Optional[str] = None
+    summary: Optional[str] = None
+    publication_date: date
 
 class BookCreate(BookBase):
     pass
